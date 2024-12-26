@@ -79,7 +79,7 @@ const Content = (props: {
     }
   }
   const checkErrTxt = (domain: any) => {
-    if (domain.endsWith(".com")) {
+    if (domain.endsWith(".app")) {
       // console.log("hello from com");
       setErrParagraphMessage("No Records Found!");
     } else if (domain.endsWith(".in")) {

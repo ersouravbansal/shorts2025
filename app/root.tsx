@@ -87,7 +87,7 @@ export const links: LinksFunction = () => [
 export const meta: MetaFunction = ({ data }) => {
   const versionMeta = [{ name: "x-web-version", content: "v" + version }];
   const metaDomain = data?.domainMeta;
-  if (metaDomain?.endsWith(".com")) {
+  if (metaDomain?.endsWith(".app")) {
     return [...rootMeta, ...defaultMeta, ...versionMeta];
   } else if (metaDomain?.endsWith(".in")) {
     return [...rootMetaHindi, ...defaultMetaHindi, ...versionMeta];
@@ -215,7 +215,7 @@ export default function App() {
   const [chartbeatScriptLoaded, setChartbeatScriptLoaded] = useState(false);
   // console.log("test krishana", REMIX_DOMAIN_HINDI)
   function getApiUrl(hostname: any) {
-    if (hostname.endsWith(".com")) {
+    if (hostname.endsWith(".app")) {
       return REMIX_DOMAIN_ENG;
     } else if (hostname.endsWith(".in")) {
       return REMIX_DOMAIN_HINDI;

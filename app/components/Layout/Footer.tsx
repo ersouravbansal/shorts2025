@@ -22,7 +22,7 @@ function Footer() {
   // }, [categoryToggle]);
   useEffect(() => {
     const domain = window.location.hostname;
-    if (domain.endsWith(".com")) {
+    if (domain.endsWith(".app")) {
       setCategoryText("Select Other Categories");
       setEngMenu(true);
     } else if (domain.endsWith(".in")) {

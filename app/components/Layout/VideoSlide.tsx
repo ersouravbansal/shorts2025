@@ -553,7 +553,7 @@ const VideoSlide = (props: any) => {
   }, []);
   useEffect(() => {
     const domain = window.location.hostname;
-    if (domain.endsWith(".com")) {
+    if (domain.endsWith(".app")) {
       setSwipeVideoText("swipe up for next");
     } else if (domain.endsWith(".in")) {
       setSwipeVideoText("अगले वीडियो के लिए ऊपरकी ओर स्वाइप करें");

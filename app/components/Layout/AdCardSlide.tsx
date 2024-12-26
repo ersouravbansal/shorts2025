@@ -63,7 +63,7 @@ const getAdCode = (device: string, category: string, catName?: string) => {
   const domain = window.location.hostname;
   //  console.log("domain is:", domain);
 
-  if (domain.endsWith(".com")) {
+  if (domain.endsWith(".app")) {
     // console.log("Your domain is:", domain, category, catName);
     // if (catName === "news") {
     //   // console.log("news com");
