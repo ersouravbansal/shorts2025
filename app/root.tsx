@@ -225,7 +225,7 @@ export default function App() {
 
   // comscore script
   useEffect(() => {
-    // console.log("hello from shorts")
+     console.log("hello from shorts")
     if (loadedComscore) return;
 
     const comscore_script = document.createElement("script");
