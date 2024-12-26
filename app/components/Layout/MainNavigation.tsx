@@ -18,7 +18,7 @@ function MainNavigation(props: any) {
   const setLogoEnglish = useStore((state) => state.setLogoEnglish);
   useEffect(() => {
     const domain = window.location.hostname;
-    if (domain.endsWith(".app")) {
+    if (domain.endsWith(".com")) {
       setIsEng(true);
       setLogoEnglish(true);
     } else if (domain.endsWith(".in")) {

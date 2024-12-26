@@ -13,7 +13,7 @@ function LeftPanel() {
   const setLogoEnglish = useStore((state) => state.setLogoEnglish);
   useEffect(() => {
     const domain = window.location.hostname;
-    if (domain.endsWith(".app")) {
+    if (domain.endsWith(".com")) {
       setBeepsDescriptionText(
         "Entertainment, Movies, Lifestyle, Health, Sports, Education, Auto, Food – Explore the  latest viral content on NDTV Shorts."
       );

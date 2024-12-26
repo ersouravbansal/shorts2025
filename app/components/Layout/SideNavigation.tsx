@@ -173,7 +173,7 @@ const SideNavigation = (props: any) => {
 
   useEffect(() => {
     const domain = window.location.hostname;
-    if (domain.endsWith(".app")) {
+    if (domain.endsWith(".com")) {
       setIsEng(true);
       khabarLinkValue = `${props.REMIX_DOMAIN_HINDI}${BASEPATH}`;
       backLinkValue = `${props.REMIX_DOMAIN_ENG}${BASEPATH}`;
