@@ -207,7 +207,7 @@ const Content = (props: {
                   {props.videoData.results?.map((slideContent, index, data) => {
                     const isActive = activeVideoIndex === index;
                     const d = slideContent;
-                    //console.log("data is:", d);
+                    console.log("data is:", d);
 
                     if (d) {
                       if ((index + 1) % 4 === 0) {
