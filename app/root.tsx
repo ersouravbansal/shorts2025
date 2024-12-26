@@ -279,64 +279,64 @@ export default function App() {
       setGTMScriptExecuted(true);
     }
   };
-  const executeScript = () => {
-    // console.log("event executed");
-    if (!loginScriptExecuted) {
-      // console.log("login script exec sv--->");
-      setLoginScriptExecuted(true);
-      // const ENVURL = REMIX_API_URL;
-      // window.ENVURL = ENVURL;
+  // const executeScript = () => {
+  //   // console.log("event executed");
+  //   if (!loginScriptExecuted) {
+  //     // console.log("login script exec sv--->");
+  //     setLoginScriptExecuted(true);
+  //     // const ENVURL = REMIX_API_URL;
+  //     // window.ENVURL = ENVURL;
 
-      const loadScriptlogin = () => {
-        return loadScript(
-          "__loginScript",
-          "https://auth.ndtv.com/w/js/config.js?v=2023-10-27-01&site=entertainment"
-        );
-        // return loadScript(
-        //   "__loginScript",
-        //   "https://stage-auth.ndtv.com/w/js/config.js?v=2023-10-27-01&site=beeps&nocss=1"
-        // );
-      };
+  //     const loadScriptlogin = () => {
+  //       return loadScript(
+  //         "__loginScript",
+  //         "https://auth.ndtv.com/w/js/config.js?v=2023-10-27-01&site=entertainment"
+  //       );
+  //       // return loadScript(
+  //       //   "__loginScript",
+  //       //   "https://stage-auth.ndtv.com/w/js/config.js?v=2023-10-27-01&site=beeps&nocss=1"
+  //       // );
+  //     };
 
-      // const loadScriptnotification = () => {
-      //   return loadScript("__notificationScript", "/shorts/js/world-fcm.js");
-      // };
+  //     // const loadScriptnotification = () => {
+  //     //   return loadScript("__notificationScript", "/shorts/js/world-fcm.js");
+  //     // };
 
-      // Promise.all([loadScriptlogin(), loadScriptnotification()])
-      Promise.all([loadScriptlogin()])
-        .then(() => {
-          const logTriggerElements =
-            document.querySelectorAll(".__log_trigger");
-          logTriggerElements.forEach((element) => {
-            // element.addEventListener("click", function () {
-            //   if (!parent_c_islogin()) {
-            //     let __rurl = window.location.href;
-            //     window.location.href =
-            //       "https://auth.ndtv.com/w/sso.html?siteurl=" +
-            //       encodeURIComponent(__rurl);
-            //     // console.log("Hi Krishna",__rurl,"vahsjv:",encodeURIComponent(__rurl))
-            //     // alert("Hi from beeps")
-            //   } else {
-            //     const toggleClass = element.getAttribute("data-class");
-            //     document.body.classList.toggle(toggleClass);
-            //   }
-            // });
-          });
+  //     // Promise.all([loadScriptlogin(), loadScriptnotification()])
+  //     Promise.all([loadScriptlogin()])
+  //       .then(() => {
+  //         const logTriggerElements =
+  //           document.querySelectorAll(".__log_trigger");
+  //         logTriggerElements.forEach((element) => {
+  //           // element.addEventListener("click", function () {
+  //           //   if (!parent_c_islogin()) {
+  //           //     let __rurl = window.location.href;
+  //           //     window.location.href =
+  //           //       "https://auth.ndtv.com/w/sso.html?siteurl=" +
+  //           //       encodeURIComponent(__rurl);
+  //           //     // console.log("Hi Krishna",__rurl,"vahsjv:",encodeURIComponent(__rurl))
+  //           //     // alert("Hi from beeps")
+  //           //   } else {
+  //           //     const toggleClass = element.getAttribute("data-class");
+  //           //     document.body.classList.toggle(toggleClass);
+  //           //   }
+  //           // });
+  //         });
 
-          const overlaySideNav = document.querySelector(".overlay__side-nav");
-          const logSdCls = document.querySelector(".LogSd-cls");
-          overlaySideNav?.addEventListener("click", removeJsSideNavClass);
-          logSdCls?.addEventListener("click", removeJsSideNavClass);
+  //         const overlaySideNav = document.querySelector(".overlay__side-nav");
+  //         const logSdCls = document.querySelector(".LogSd-cls");
+  //         overlaySideNav?.addEventListener("click", removeJsSideNavClass);
+  //         logSdCls?.addEventListener("click", removeJsSideNavClass);
 
-          function removeJsSideNavClass() {
-            document.body.classList.remove("js_sid-nav-right");
-          }
-        })
-        .catch((error) => {
-          console.log("Error loading scripts:", error);
-        });
-    }
-  };
+  //         function removeJsSideNavClass() {
+  //           document.body.classList.remove("js_sid-nav-right");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log("Error loading scripts:", error);
+  //       });
+  //   }
+  // };
   const params = useParams();
   const setSilent = useStore((state) => state.setSilent);
   const setTapToPlay = useStore((state) => state.setTapToPlay);
@@ -483,7 +483,7 @@ export default function App() {
   };
   useEffect(() => {
     if (loginScriptExecuted) return;
-    executeScript();
+    // executeScript();
     // document.addEventListener("click", executeScript);
     // document.addEventListener("mousemove", executeScript);
     // document.addEventListener("touchstart", executeScript);
