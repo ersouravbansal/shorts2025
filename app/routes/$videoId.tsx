@@ -115,21 +115,39 @@ export const loader: LoaderFunction = async ({ params, request }) => {
   try {
     const language = getLanguageFromDomain(request.url);
     const video_id = params.videoId?.split("-").pop();
-    const videos = await fetchVideos({ video_id: video_id, language });
+    const videos = await fetchVideos({ video_id: video_id, language }); // Single video or array
     let moreVideos = [];
 
     if (videos) {
-      moreVideos = await fetchMoreVideos(1, videos, language);
+      moreVideos = await fetchMoreVideos(1, videos, language); // Fetch additional videos
     }
 
-    const mergedVideos = Array.isArray(videos)
-      ? [...videos, ...moreVideos]
-      : [videos, ...moreVideos];
-      // console.log("mergedvideoslength:",mergedVideos.length)
-      if(mergedVideos.length == 11){
-        mergedVideos.length=10
-      }
-    return json({ results: mergedVideos, language });
+    // Merge videos ensuring no duplicates
+    const videoSet = new Set(); // Track unique video IDs
+    const mergedVideos = [];
+
+    // Helper function to add videos to the merged array
+    const addVideos = (videoArray) => {
+      videoArray.forEach((video) => {
+        if (!videoSet.has(video.id)) { // Assuming `id` is a unique identifier for videos
+          videoSet.add(video.id);
+          mergedVideos.push(video);
+        }
+      });
+    };
+
+    // Add videos from both sources
+    if (Array.isArray(videos)) {
+      addVideos(videos);
+    } else if (videos) {
+      addVideos([videos]); // Single video wrapped in an array
+    }
+
+    addVideos(moreVideos);
+
+    // Ensure the total length is a multiple of 10
+    const maxVideos = Math.floor(mergedVideos.length / 10) * 10;
+    return json({ results: mergedVideos.slice(0, maxVideos), language });
   } catch (error) {
     console.error("Error loading videos:", error);
     return json({
@@ -138,6 +156,7 @@ export const loader: LoaderFunction = async ({ params, request }) => {
     });
   }
 };
+
 
 const ShortVideosComponent = () => {
   const urlupdate = useStore((state) => state.urlupdate);
