@@ -22,7 +22,6 @@ const VideoSlide = (props: any) => {
   const [linkText, setLinkText] = useState("Copy Link");
   const [isCopied, setIsCopied] = useState(false);
   const silent = useStore((state) => state.silent);
-  const setSilent = useStore((state) => state.setSilent);
   const backLink = useStore((state) => state.backLink);
   const urlupdate = useStore((state) => state.urlupdate);
   const elementsVisible = useStore((state) => state.elementsVisible);
@@ -851,18 +850,16 @@ const VideoSlide = (props: any) => {
                 onPlay={() => {
                   setVideoState(`play:${playerState.isPlaying}`);
                   // console.log("video state -> play:",playerState.isPlaying);
-
-                  // ppRef.current?.classList.remove("kk_pause");
-                  // ppRef.current?.classList.add("kk_ply");
-                  // playVideo();
+                  ppRef.current?.classList.remove("kk_pause");
+                  ppRef.current?.classList.add("kk_ply");
+                  playVideo();
                 }}
                 onPause={() => {
                   setVideoState(`pause:${playerState.isPlaying}`);
                   // console.log("video state -> pause:",playerState.isPlaying);
-
-                  // ppRef.current?.classList.remove("kk_ply");
-                  // ppRef.current?.classList.add("kk_pause");
-                  // pauseVideo();
+                  ppRef.current?.classList.remove("kk_ply");
+                  ppRef.current?.classList.add("kk_pause");
+                  pauseVideo();
                 }}
                 onSuspend={() => {
                   setVideoState(`suspend: ${playerState.isPlaying}`);
