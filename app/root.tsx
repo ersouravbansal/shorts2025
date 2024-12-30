@@ -481,21 +481,21 @@ export default function App() {
       document.body.appendChild(script);
     });
   };
-  // useEffect(() => {
-  //   if (loginScriptExecuted) return;
-  //   executeScript();
-  //   // document.addEventListener("click", executeScript);
-  //   // document.addEventListener("mousemove", executeScript);
-  //   // document.addEventListener("touchstart", executeScript);
-  //   // document.addEventListener("touchmove", executeScript);
+  useEffect(() => {
+    if (loginScriptExecuted) return;
+    executeScript();
+    // document.addEventListener("click", executeScript);
+    // document.addEventListener("mousemove", executeScript);
+    // document.addEventListener("touchstart", executeScript);
+    // document.addEventListener("touchmove", executeScript);
 
-  //   // return () => {
-  //   //   document.removeEventListener("click", executeScript);
-  //   //   document.removeEventListener("mousemove", executeScript);
-  //   //   document.removeEventListener("touchstart", executeScript);
-  //   //   document.removeEventListener("touchmove", executeScript);
-  //   // };
-  // }, [loginScriptExecuted]);
+    // return () => {
+    //   document.removeEventListener("click", executeScript);
+    //   document.removeEventListener("mousemove", executeScript);
+    //   document.removeEventListener("touchstart", executeScript);
+    //   document.removeEventListener("touchmove", executeScript);
+    // };
+  }, [loginScriptExecuted]);
 
   useEffect(() => {
     register();
