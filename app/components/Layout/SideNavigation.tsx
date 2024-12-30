@@ -196,7 +196,15 @@ const SideNavigation = (props: any) => {
           <div className="m-nv m-nv_clr snv_cn-hed">
           {/* <a className="Bep_Ndtv-lgo" href="https://ndtv.in/"> */}
           <a className="Bep_Ndtv-lgo" href={BASEPATH}>
-          <img alt="NDTV" title="NDTV" className={`vj_icn ${isEng?"Bep_Ndtv-lgo-img":"Bep_Ndtv-lgo-img-h"}`} src={logoEnglish?EnglishLogo:HindiLogo} />            
+          {/* <img alt="NDTV" title="NDTV" className={`vj_icn ${isEng?"Bep_Ndtv-lgo-img":"Bep_Ndtv-lgo-img-h"}`} src={logoEnglish?EnglishLogo:HindiLogo} />             */}
+          {logoEnglish !== null && (
+                <img
+                  alt="NDTV"
+                  title="NDTV"
+                  className={`vj_icn ${isEng ? "Bep_Ndtv-lgo-img" : "Bep_Ndtv-lgo-img-h"}`}
+                  src={logoEnglish ? EnglishLogo : HindiLogo}
+                />
+              )}
           </a>
             <a
               className="sid-nav-cls"

@@ -13,6 +13,7 @@ function LeftPanel() {
   const setLogoEnglish = useStore((state) => state.setLogoEnglish);
   useEffect(() => {
     const domain = window.location.hostname;
+    console.log("logoEnglish:", logoEnglish, "domain:", domain);
     if (domain.endsWith(".com")) {
       setBeepsDescriptionText(
         "Entertainment, Movies, Lifestyle, Health, Sports, Education, Auto, Food – Explore the  latest viral content on NDTV Shorts."
@@ -31,7 +32,10 @@ function LeftPanel() {
         <div className="BepSlCol_lft-wr">
           <div className="BepSlCol_lgo-lk">
             <a className="ndtv-logo BepHdr_lgo" href={BASEPATH}>
-              <img src={logoEnglish ? EnglishLogo : HindiLogo} alt="" />
+              {/* <img src={logoEnglish ? EnglishLogo : HindiLogo} alt="" /> */}
+              {logoEnglish !== null && (
+                <img src={logoEnglish ? EnglishLogo : HindiLogo} alt="" />
+              )}
             </a>
           </div>
           <div className="BepSlCol_dsp">

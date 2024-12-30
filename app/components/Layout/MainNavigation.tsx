@@ -188,7 +188,13 @@ function MainNavigation(props: any) {
                       }`}
                       href={BASEPATH}
                     >
-                      <img src={logoEnglish ? EnglishLogo : HindiLogo} alt="" />
+                      {/* <img src={logoEnglish ? EnglishLogo : HindiLogo} alt="" /> */}
+                      {logoEnglish !== null && (
+                        <img
+                          src={logoEnglish ? EnglishLogo : HindiLogo}
+                          alt=""
+                        />
+                      )}
                     </a>
                   </div>
                 </div>
@@ -224,7 +230,7 @@ function MainNavigation(props: any) {
                     onClick={() => {
                       console.log("logSet__");
                       setLoginPanel(!loginPanel);
-                      
+
                       if (!parent_c_islogin()) {
                         let __rurl = window.location.href;
                         window.location.href =

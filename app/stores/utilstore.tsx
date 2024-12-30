@@ -32,7 +32,7 @@ const useStore = create((set, get) => ({
   categoryText: "Select Other Categories",
   swipeVideoText: "swipe up for next",
   isSwiping: true,
-  logoEnglish: true,
+  logoEnglish: null,
   setVidObject: (newValue: any) => set({ vidObject: newValue }),
   setLogoEnglish: (newValue: boolean) => set({ logoEnglish: newValue }),
   setIsSwiping: (newValue: boolean) => set({ isSwiping: newValue }),
